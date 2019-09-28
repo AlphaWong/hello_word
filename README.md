@@ -8,6 +8,17 @@ if u want to install it via the pipenv, u need to run `pipenv install sanic` the
 As pipenv will also create a venv for u in a cache place which u can check it via `pipenv --venv`
 ```
 
+# tools
+```
+python
+version management: pyenv
+package management: pipenv
+test framework: pytest
+web framework: sanic
+Docker native: python
+Dokcer pypy: pypy:3
+```
+
 
 # Docker build
 ```console
