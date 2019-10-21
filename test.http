@@ -1,0 +1,11 @@
+### 
+# Health check
+GET http://127.0.0.1:4000/ping HTTP/1.1
+
+###
+# Get current time
+GET http://127.0.0.1:4000/times/now HTTP/1.1
+
+###
+# Say hello to user
+GET http://127.0.0.1:4000/users/beta HTTP/1.1

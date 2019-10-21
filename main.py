@@ -1,19 +1,21 @@
-from sanic import Sanic
-from sanic.response import json
+from bottle import route, run, response
 from services import times
 
-app = Sanic()
+
+@route("/ping", method="GET")
+def ping():
+    return {"success": True}
 
 
-@app.route("/ping")
-async def ping(request):
-    return json({"success": True})
+@route("/times/now", method="GET")
+def time():
+    return {"success": True, "time": times.current()}
 
 
-@app.route("times/now")
-async def time(request):
-    return json({"success": True, "time": times.current()})
+@route("/users/<name>")
+def user(name="n/a"):
+    return {"success": True, "message": "hello {name}".format(name=name)}
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=4000)
+    run(host="0.0.0.0", port=4000, debug=True)
